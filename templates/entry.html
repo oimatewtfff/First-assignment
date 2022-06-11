@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<figure class="text-center">
+    <blockquote class="blockquote">
+        <h1>Введите коэффиценты квадратного уравнения</h1>
+    </blockquote>
+    <figcaption class="blockquote-footer mb-5">
+        коэффиценты больше нуля
+    </figcaption>
+</figure>
+<form method='POST' action='/result'>
+    <form class="row g-1">
+    <div class="input-group input-group-lg mb-5 justify-content-center">
+        <input class="col form-control" name='first' type="number" step="0.01" placeholder="a" aria-label="First name" value="" required>
+        <span class="input-group-text"><i>X <sup><small>2</small></sup></i></span>
+        <span class="input-group-text"><i>+</i></span>
+        <input class="form-control" name='second' type="number" step="0.01" placeholder="b" aria-label="Last name" value="" required>
+        <span class="input-group-text"><i>X</i></span>
+        <span class="input-group-text"><i>+</i></span>
+        <input class="form-control" name='third' type="number" step="0.01" placeholder="c" aria-label="Last name" value="" required>
+    </div>
+    <div class="d-grid gap-2 col-2 mx-auto">
+        <button type="submit" class="btn btn-primary">Решить</button>
+    </div>
+</form>
+{% endblock %}

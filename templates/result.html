@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Ваше квадратное уравнение:</h1>
+<div class="input-group input-group-lg mb-2 mt-3 justify-content-center">
+    <h2>{% if the_first == 0.0 and the_second == 0.0 and the_third == 0.0 %}
+        Корректно заполните коэффиценты
+        {% else %}
+            {% if the_first == 0.0 or the_first == 1.0 %}
+            {% elif the_first == -1.0 %}
+            -
+            {% else %}
+            {{ the_first }}
+            {% endif %}
+            <i>X<sup><small>2</small></sup></i>
+            {% if the_second == 0.0 or the_second == 1.0 %}
+            +
+            {% elif the_second == -1.0 %}
+            -
+            {% elif the_second > 1.0 %}
+            +{{ the_second }}
+            {% else %}
+            {{ the_second }}
+            {% endif %}
+            <i>X</i>
+            {% if the_third > 0 %}
+            +{{ the_third }}
+            {% else %}
+            {{ the_third }}
+            {% endif %}
+        {% endif %}
+    </h2>
+</div>
+<hr>
+<h4>Корни уравнения: </h4>
+<h3>{{ the_results }}</h3>
+{% endblock %}
